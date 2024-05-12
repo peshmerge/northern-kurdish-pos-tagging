@@ -3,6 +3,7 @@ from utils import extract_tokens
 from markupsafe import Markup
 from flask import Flask, request
 from pos_model import POSModel
+import bleach
 
 app = Flask(__name__)
 
@@ -189,11 +190,11 @@ def perform_pos(model, training_data_type, sentence, tokenization_method):
 
 @app.route('/pos_tag', methods=['POST'])
 def pos_tag():
-    training_data_type = request.form['training_data_type']
-    tokenization_method = request.form['tokenization_method']
-    model = request.form['model']
-    sentence = Markup.escape(request.form['sentence'])
-    output_style = request.form['output_style']
+    training_data_type = bleach.clean(request.form['training_data_type'])
+    tokenization_method = bleach.clean(request.form['tokenization_method'])
+    model = bleach.clean(request.form['model'])
+    sentence = bleach.clean(request.form['sentence'])
+    output_style = bleach.clean(request.form['output_style'])
     return_value = ''
     if model == 'All':
         for model in POSModel.POS_MODELS:
@@ -213,4 +214,4 @@ def pos_tag():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
