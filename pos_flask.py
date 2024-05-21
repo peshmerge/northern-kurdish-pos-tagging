@@ -4,9 +4,17 @@ from markupsafe import Markup
 from flask import Flask, request
 from pos_model import POSModel
 import bleach
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
 
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["200 per day", "50 per hour"],
+    storage_uri="memory://",
+)
 
 @app.route('/')
 def home():
@@ -19,6 +27,9 @@ def home():
             <title>Northern Kurdish POS tagging by Peshmerge Morad</title>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
             <style>
+                h1 sup {
+                    font-size: 0.5em !important;
+                }
                 .ADJ {
                    background-color: #87CEEB
                 }
@@ -116,7 +127,7 @@ def home():
             </script>
     </head>
     <body style="padding: 2rem !important;">
-        <h1>Northern Kurdish POS tagging</h1>
+        <h1>Northern Kurdish POS tagging<sup> <a href="https://peshmerge.io/publications/northern-kurdish-pos-tagging-2024.pdf"> Paper </a>, <a href="https://github.com/peshmerge/northern-kurdish-pos-tagging" > Github </a> </sup></h1> 
          <form>
         <div class="grid">
             <div> 
@@ -189,6 +200,7 @@ def perform_pos(model, training_data_type, sentence, tokenization_method):
 
 
 @app.route('/pos_tag', methods=['POST'])
+@limiter.limit("25/minute")
 def pos_tag():
     training_data_type = bleach.clean(request.form['training_data_type'])
     tokenization_method = bleach.clean(request.form['tokenization_method'])
