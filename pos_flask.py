@@ -127,7 +127,7 @@ def home():
             </script>
     </head>
     <body style="padding: 2rem !important;">
-        <h1>Northern Kurdish POS tagging<sup> <a href="https://peshmerge.io/publications/northern-kurdish-pos-tagging-2024.pdf"> Paper </a>, <a href="https://github.com/peshmerge/northern-kurdish-pos-tagging" > Github </a> </sup></h1> 
+        <h1>Northern Kurdish POS tagging<sup> <a href="https://peshmerge.io/publications/morad2024kmrpos.pdf"> Paper </a>, <a href="https://github.com/peshmerge/northern-kurdish-pos-tagging" > Github </a> </sup></h1> 
          <form>
         <div class="grid">
             <div> 
