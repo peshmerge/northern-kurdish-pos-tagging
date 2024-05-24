@@ -3,6 +3,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+models/ExtraTrees/KMR_POS_ExtraTrees_Model_augmented.pickle
+models/ExtraTrees/KMR_POS_ExtraTrees_Model_original.pickle
+models/BiLSTM/KMR_POS_BiLSTM_Model_augmented.pt
+models/BiLSTM/KMR_POS_BiLSTM_Model_original.pt
+models/NK-XLMR/KMR_POS_NK-XLMR_Model_augmented
+models/NK-XLMR/KMR_POS_NK-XLMR_Model_original
+
+
 # C extensions
 *.so
 

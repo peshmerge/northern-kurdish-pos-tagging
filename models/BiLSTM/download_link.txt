@@ -1,0 +1,2 @@
+Download the .zip (5.02 GB) file from the following link (Google Drive). The compressed file is the folder of the BiLSTM model (original and augmented). 
+https://drive.google.com/file/d/1mfIO055CqfI-pVEWk21WcbxBGne4j5D3/view?usp=sharing

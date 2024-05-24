@@ -1,0 +1,2 @@
+Download the .zip (2.46 GB) file from the following link (Google Drive). The compressed file is the folder of the NK-XLMR model (original and augmented). 
+https://drive.google.com/file/d/1Zk-RI2RrjSxW1r65xm4n6GgIRAUrx7X5/view?usp=sharing
