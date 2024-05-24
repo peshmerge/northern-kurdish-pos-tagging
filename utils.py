@@ -2,15 +2,15 @@ import pickle
 import zipfile
 import os
 import random
-
-# Must be done once!
-# import nltk
-# nltk.download('punkt')
-
+import re
+import nltk
 from flair.data import Sentence
 from klpt.tokenize import Tokenize
 from nltk import word_tokenize
 from sklearn.feature_extraction import DictVectorizer
+
+# Must be done once!
+nltk.download('punkt')
 
 vectoriser = DictVectorizer(sparse=False)
 REPLACEMENT_SYMBOL = "None"
@@ -128,3 +128,33 @@ def extract_tokens(token_tags_lists):
 # expects [(token,tag),(token,tag)]
 def extract_tags(token_tags_lists):
     return [item[1] for item in token_tags_lists]
+
+
+def flatten(input_list):
+    """
+    Flatten list of lists.
+    """
+    return [item for sublist in input_list for item in sublist]
+
+
+def read_gold_standard_tsv_file(file_path, expected_sentences_amount):
+    """
+    Read a gold data tsv file and return the list of sentences and list
+    of tuples (token,tag) for each sentence.
+    Example usage
+    print(read_gold_standard_tsv_file("datasets/gold_data.tsv",136))
+    """
+    sentences = []
+    gold_tokens_tags = []
+
+    with open(file_path) as f:
+        data = f.read().split("\n\t\n")
+
+    for i in range(0, len(data), 2):
+        gold_tokens_tags.append([(j.split("\t")[0], (j.split("\t")[1]).strip()) for j in data[i + 1].splitlines()])
+        sentences.append(re.sub(f"\t", f"", data[i]))
+    assert len(sentences) == expected_sentences_amount, f"The file must contain {expected_sentences_amount} sentences"
+    print(f"{file_path} has {len(sentences)} "
+          f"sentences and has {len(flatten([[item[0] for item in sent] for sent in gold_tokens_tags]))} tokens")
+
+    return sentences, gold_tokens_tags

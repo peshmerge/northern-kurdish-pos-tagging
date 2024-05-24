@@ -63,7 +63,7 @@ Please consider citing [this paper](https://peshmerge.io/publications/morad2024_
 ```
 @inproceedings{morad2024kmrpos,
   title = "Part-of-Speech Tagging for Northern Kurdish",
-  author = "Morad, Peshmerge, and Ahmadi, Sina and Gatti, Lorenzo",
+  author = "Morad, Peshmerge and Ahmadi, Sina and Gatti, Lorenzo",
   booktitle = "Proceedings of the Joint Workshop on Multiword Expressions and Universal Dependencies (MWE-UD 2024)",
   month = may,
   year = "2024",
