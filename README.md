@@ -61,14 +61,28 @@ Clone the repo and run `pip install -r requirements.txt ` to install all depende
 Please consider citing [this paper](https://peshmerge.io/publications/morad2024_kmr_pos.pdf), if you use any part of the data or the POS models:
 
 ```
-@inproceedings{morad2024kmrpos,
-  title = "Part-of-Speech Tagging for Northern Kurdish",
-  author = "Morad, Peshmerge and Ahmadi, Sina and Gatti, Lorenzo",
-  booktitle = "Proceedings of the Joint Workshop on Multiword Expressions and Universal Dependencies (MWE-UD 2024)",
-  month = may,
-  year = "2024",
-  address = "Torino, Italy",
-  publisher = "ELRA Language Resources Association"
+@inproceedings{morad-etal-2024-part,
+    title = "Part-of-Speech Tagging for {N}orthern {K}urdish",
+    author = "Morad, Peshmerge  and
+      Ahmadi, Sina  and
+      Gatti, Lorenzo",
+    editor = "Bhatia, Archna  and
+      Bouma, Gosse  and
+      Dogruoz, A. Seza  and
+      Evang, Kilian  and
+      Garcia, Marcos  and
+      Giouli, Voula  and
+      Han, Lifeng  and
+      Nivre, Joakim  and
+      Rademaker, Alexandre",
+    booktitle = "Proceedings of the Joint Workshop on Multiword Expressions and Universal Dependencies (MWE-UD) @ LREC-COLING 2024",
+    month = may,
+    year = "2024",
+    address = "Torino, Italia",
+    publisher = "ELRA and ICCL",
+    url = "https://aclanthology.org/2024.mwe-1.11",
+    pages = "70--80",
+    abstract = "In the growing domain of natural language processing, low-resourced languages like Northern Kurdish remain largely unexplored due to the lack of resources needed to be part of this growth. In particular, the tasks of part-of-speech tagging and tokenization for Northern Kurdish are still insufficiently addressed. In this study, we aim to bridge this gap by evaluating a range of statistical, neural, and fine-tuned-based models specifically tailored for Northern Kurdish. Leveraging limited but valuable datasets, including the Universal Dependency Kurmanji treebank and a novel manually annotated and tokenized gold-standard dataset consisting of 136 sentences (2,937 tokens). We evaluate several POS tagging models and report that the fine-tuned transformer-based model outperforms others, achieving an accuracy of 0.87 and a macro-averaged F1 score of 0.77. Data and models are publicly available under an open license at https://github.com/peshmerge/northern-kurdish-pos-tagging",
 }
 
 ```
