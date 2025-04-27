@@ -2,11 +2,11 @@ scikit-learn==1.3.2
 flair==0.13.1
 nltk==3.8.1
 dill==0.3.7
-klpt==0.1.6
+klpt==0.1.7
 trankit==1.1.1
 python-crfsuite==0.9.10
 scipy==1.12
-######## The following pacakges are used for the local server ########
+######## The following packages are used for the local server ########
 flask==2.2.5
 markupsafe==2.1.3
 bleach==4.1.0
