@@ -53,7 +53,7 @@ stands over its roots, so does every human blossom with their mother tongue'">
 
 ## Requirements
 - Operating system: macOS / OS X · Linux · Windows
-- Python version: Python 3.9.19
+- Python version: Python 3.9.19 or Python 3.10
 
 Clone the repo and run `pip install -r requirements.txt ` to install all dependencies.
 
